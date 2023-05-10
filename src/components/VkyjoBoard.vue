@@ -11,7 +11,7 @@
 			<div class='col'>
 				<VkyjoCard @click="clickDiscard()" :value="data.face.value" :selected="data.choice === 'face'" :visible="data.face.visible" />
 			
-				<button v-if="data.step !== 'end'" @click="restartGame()">Nouvelle manche</button>
+				<button v-if="data.step === 'end'" @click="restartGame()">Nouvelle manche</button>
 			
 				<VkyjoCard @click="clickDeck()" :value="data.back.value" :selected="data.choice === 'back'" :visible="data.back.visible" />
 			</div>
