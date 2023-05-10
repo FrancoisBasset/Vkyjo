@@ -186,15 +186,9 @@ function checkFinished() {
 	if (playerLast === 0 || botLast === 0) {
 		updateScore();
 
-		const playerCards = data.playerCards;
-		playerCards.map(c => c.visible = true);
-
-		const botCards = data.botCards;
-		botCards.map(c => c.visible = true);
-
+		data.playerCards.map(c => c.visible = true);
+		data.botCards.map(c => c.visible = true);
 		data.step = 'end';
-		data.playerCards = playerCards;
-		data.botCards = botCards;
 	}
 }
 
