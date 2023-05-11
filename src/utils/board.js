@@ -1,5 +1,5 @@
 function getCardsOfValue(value, count) {
-	let cards = [];
+	const cards = [];
 	for (let i = 0; i < count; i++) {
 		cards.push({
 			value: value,

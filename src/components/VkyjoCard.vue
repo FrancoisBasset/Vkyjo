@@ -1,13 +1,14 @@
 <template>
-	<img :src="'/' + imageName + '.png'" alt="card" width="65" :class="[props.selected === true ? 'selected' : '']" />
+	<img :src="'/' + imageName + '.png'" alt="card" :class="[props.selected === true ? 'selected' : '']" />
 </template>
 
 <style scoped>
 img {
-    display: inline-block;
+	display: inline-block;
 	margin: 2px;
 	margin-left: 6px;
 	margin-right: 6px;
+	height: 5em;
 }
 
 img:hover {

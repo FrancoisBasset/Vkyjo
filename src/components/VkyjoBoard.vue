@@ -6,7 +6,7 @@
 				<VkyjoGrid :cards="data.botCards" />
 			</div>
 		</div>
-		<br><br>
+		<br>
 		<div class='row'>
 			<div class='col'>
 				<VkyjoCard @click="clickDiscard()" :value="data.face.value" :selected="data.choice === 'face'" :visible="data.face.visible" />
@@ -16,7 +16,7 @@
 				<VkyjoCard @click="clickDeck()" :value="data.back.value" :selected="data.choice === 'back'" :visible="data.back.visible" />
 			</div>
 		</div>
-		<br><br>
+		<br>
 		<div class='row'>
 			<div className='col'>
 				<VkyjoGrid @onCardClick="i => playerPlays(i)" :cards="data.playerCards" />
@@ -114,7 +114,7 @@ function playerPlays(i) {
 		if (data.choice === 'face') {
 			data.playerCards[i].visible = true;
 
-			let face = data.playerCards[i];
+			const face = data.playerCards[i];
 			data.playerCards[i] = data.face;
 			data.face = face;
 
