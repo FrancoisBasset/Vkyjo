@@ -13,9 +13,7 @@ function getCardsOfValue(value, count) {
 function shuffleArray(array) {
 	for (let i = array.length - 1; i > 0; i--) {
 		const j = Math.floor(Math.random() * (i + 1));
-		const temp = array[i];
-		array[i] = array[j];
-		array[j] = temp;
+		[array[i], array[j]] = [array[j], array[i]];
 	}
 }
 
@@ -33,21 +31,11 @@ export function getNewCardsPack() {
 }
 
 export function getPlayerCards(cards) {
-	const playerCards = [];
-	
-	for (let i = 0; i < 12; i++) {
-		playerCards.push(cards.pop());
-	}
-
-	return playerCards;
+	return cards.splice(0, 12);
 }
 
 export function getBotCards(cards) {
-	const botCards = [];
-
-	for (let i = 0; i < 12; i++) {
-		botCards.push(cards.pop());
-	}
+	const botCards = cards.splice(0, 12);
 
 	const index1 = Math.floor(Math.random() * 12);
 	let index2 = index1;
